@@ -3,62 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Klyra Lab builds enterprise data observability, FinOps, and multi-cloud AI infrastructure via KlyraCore v2.4. Headquartered in HSR Layout, Bengaluru.">
+    <meta name="description" content="Klyra Lab builds enterprise data observability, Kubernetes FinOps, and multi-cloud AI gateway infrastructure via KlyraCore. Headquartered in Bengaluru.">
+    <meta property="og:title" content="Klyra Lab | Enterprise Data Observability & Cloud Intelligence">
+    <meta property="og:description" content="Autonomous data pipelines, real-time Kubernetes compute optimization, and secure LLM routing for enterprise engineering teams.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.klyralab.in">
     <title>Klyra Lab | Enterprise Data Observability & Cloud Intelligence</title>
+    <!-- Embedded SVG Favicon so browser tab looks 100% authentic -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232563eb'/><text x='50%' y='54%' dominant-baseline='central' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='800' font-size='52'>KL</text></svg>">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Top Announcement Bar -->
     <div class="top-banner">
         <div class="container">
-            <span><strong>Ecosystem Update:</strong> KlyraCore v2.4 now supports native OpenTelemetry, Snowflake, and Zero-Trust IAM integrations. <a href="#partnerships">Partner with our Engineering Team &rarr;</a></span>
+            <span><span class="badge-new">RELEASE</span> <strong>KlyraCore v2.4</strong> is now generally available with eBPF zero-instrumentation Kubernetes collectors and Snowflake lineage. <a href="#platform">Explore Architecture &rarr;</a></span>
         </div>
     </div>
 
     <!-- Navigation -->
     <header class="navbar">
         <div class="container nav-container">
-            <div class="brand">
+            <a href="#" class="brand">
                 <span class="logo-mark">KL</span>
                 <span class="logo-text">Klyra Lab</span>
-            </div>
+            </a>
             <nav>
-                <a href="#platform">KlyraCore v2.4</a>
-                <a href="#solutions">Industries</a>
-                <a href="#partnerships">Vendor Ecosystem</a>
+                <a href="#platform">Platform</a>
+                <a href="#integrations">Integrations</a>
+                <a href="#deployments">Deployments</a>
                 <a href="#security">Security</a>
-                <a href="#contact" class="btn-nav">Request Briefing</a>
+                <a href="#contact" class="btn-nav">Schedule Demo</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Hero Split Section with Telemetry Terminal -->
         <section class="hero">
-            <div class="container">
-                <div class="hero-badge">GENERATIVE AI &amp; CLOUD FINOPS INFRASTRUCTURE</div>
-                <h1>Autonomous Data Pipelines &amp; Cloud Cost Intelligence</h1>
-                <p><strong>KlyraCore v2.4</strong> empowers global enterprise engineering, DevSecOps, and data architecture teams to eliminate cloud latency, govern LLM deployments, and automate multi-cloud observability at scale.</p>
-                <div class="hero-actions">
-                    <a href="#platform" class="btn-primary">Explore Platform Architecture</a>
-                    <a href="#partnerships" class="btn-secondary">Technology Partnerships &amp; Briefings</a>
+            <div class="container hero-grid">
+                <div class="hero-left">
+                    <div class="hero-badge">KLYRACORE v2.4 ENTERPRISE CONTROL PLANE</div>
+                    <h1>Autonomous Data Pipelines &amp; Cloud Cost Intelligence</h1>
+                    <p>Klyra Lab empowers platform engineering, FinOps, and data architecture teams to eliminate pipeline latency, automate Kubernetes cluster rightsizing, and govern production AI workloads inside your own VPC.</p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn-primary">Request Architecture Walkthrough</a>
+                        <a href="#deployments" class="btn-secondary">View Deployment Models</a>
+                    </div>
+                    <div class="hero-trust">
+                        <span>Designed for hybrid-cloud environments running on:</span>
+                        <div class="cloud-pills">
+                            <span>AWS EKS</span>
+                            <span>Azure AKS</span>
+                            <span>Google GKE</span>
+                            <span>Snowflake</span>
+                            <span>Databricks</span>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Product Terminal Visual -->
+                <div class="hero-right">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="terminal-title">klyracore-operator &mdash; prod-ap-south-1 (eBPF)</span>
+                        </div>
+                        <div class="terminal-body">
+<pre><code><span class="c-muted"># KlyraCore v2.4 Autonomous Policy Configuration</span>
+<span class="c-key">apiVersion:</span> <span class="c-str">observability.klyralab.in/v2beta4</span>
+<span class="c-key">kind:</span> <span class="c-str">ClusterOptimizationPolicy</span>
+<span class="c-key">metadata:</span>
+  <span class="c-key">name:</span> <span class="c-str">prod-data-mesh-finops</span>
+  <span class="c-key">region:</span> <span class="c-str">ap-south-1</span>
+<span class="c-key">spec:</span>
+  <span class="c-key">telemetryCollector:</span> <span class="c-str">ebpf-zero-overhead</span>
+  <span class="c-key">dataLineage:</span>
+    <span class="c-key">sources:</span> [<span class="c-str">"kafka-stream"</span>, <span class="c-str">"snowflake-dw"</span>, <span class="c-str">"s3-iceberg"</span>]
+    <span class="c-key">schemaDriftAction:</span> <span class="c-str">auto-quarantine</span>
+  <span class="c-key">computeRightsizing:</span>
+    <span class="c-key">enabled:</span> <span class="c-bool">true</span>
+    <span class="c-key">targetUtilization:</span> <span class="c-num">78%</span>
+    <span class="c-key">spotFallback:</span> <span class="c-str">autonomous</span>
+  <span class="c-key">llmGateway:</span>
+    <span class="c-key">piiRedaction:</span> <span class="c-str">strict-presidio</span>
+
+<span class="c-ok">&check; [STATUS] 148 nodes synced | Telemetry latency: 8.4ms</span>
+<span class="c-ok">&check; [FINOPS] Projected monthly compute savings: 41.8% ($38,400/mo)</span></code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Metrics Bar -->
+            <div class="container">
                 <div class="hero-metrics">
                     <div class="metric">
                         <span class="metric-val">99.99%</span>
-                        <span class="metric-label">Pipeline Uptime SLA</span>
+                        <span class="metric-label">Control Plane Uptime SLA</span>
                     </div>
                     <div class="metric">
                         <span class="metric-val">42%</span>
-                        <span class="metric-label">Cloud Compute Reduction</span>
+                        <span class="metric-label">Avg. Cloud Compute Reduction</span>
                     </div>
                     <div class="metric">
-                        <span class="metric-val">&lt;12ms</span>
-                        <span class="metric-label">Real-Time Inference Routing</span>
+                        <span class="metric-val">&lt;10ms</span>
+                        <span class="metric-label">eBPF Telemetry Overhead</span>
                     </div>
                     <div class="metric">
-                        <span class="metric-val">50+</span>
-                        <span class="metric-label">Enterprise Connectors</span>
+                        <span class="metric-val">55+</span>
+                        <span class="metric-label">Native Enterprise Connectors</span>
                     </div>
                 </div>
             </div>
@@ -68,78 +124,118 @@
         <section id="platform" class="section-white">
             <div class="container">
                 <div class="section-header">
-                    <span class="sub-title">PRODUCT ARCHITECTURE</span>
-                    <h2>Engineered for High-Throughput Enterprise Workloads</h2>
-                    <p>KlyraCore v2.4 integrates directly into existing hybrid-cloud environments, providing unified telemetry across compute, storage, and security layers.</p>
+                    <span class="sub-title">UNIFIED ARCHITECTURE</span>
+                    <h2>Three Core Engines. One Self-Hosted Control Plane.</h2>
+                    <p>KlyraCore eliminates tool sprawl by uniting data pipeline observability, cloud compute rightsizing, and AI gateway security inside your virtual private cloud.</p>
                 </div>
                 <div class="grid-3">
                     <div class="card">
-                        <div class="card-tag">DATA OPS &amp; ETL</div>
-                        <h3>Self-Healing Data Pipelines</h3>
-                        <p>Automated schema drift detection, real-time anomaly alerting, and zero-downtime data ingestion across Apache Kafka, Snowflake, Databricks, and Redshift.</p>
+                        <div class="card-tag">01 / DATA OBSERVABILITY</div>
+                        <h3>Self-Healing ETL &amp; Lineage</h3>
+                        <p>Automated column-level lineage, schema drift prevention, and real-time freshness SLAs across high-throughput Apache Kafka, Spark, Snowflake, and Databricks pipelines.</p>
+                        <ul class="card-bullets">
+                            <li>Automated root-cause analysis for broken DAGs</li>
+                            <li>Zero-copy metadata extraction</li>
+                            <li>Native PagerDuty, Slack &amp; Jira routing</li>
+                        </ul>
                     </div>
                     <div class="card">
-                        <div class="card-tag">CLOUD FINOPS</div>
-                        <h3>Cognitive Compute &amp; Cost Analytics</h3>
-                        <p>AI-driven Kubernetes cluster rightsizing and multi-cloud spend forecasting across AWS, Microsoft Azure, and Google Cloud Platform.</p>
+                        <div class="card-tag">02 / CLOUD FINOPS</div>
+                        <h3>Autonomous Kubernetes Rightsizing</h3>
+                        <p>Continuous eBPF kernel-level utilization profiling that dynamically adjusts pod CPU/memory requests, eliminates zombie volumes, and orchestrates spot instance workloads.</p>
+                        <ul class="card-bullets">
+                            <li>Zero-downtime vertical &amp; horizontal scaling</li>
+                            <li>Multi-tenant cost showback &amp; chargeback</li>
+                            <li>GPU cluster bin-packing for ML workloads</li>
+                        </ul>
                     </div>
                     <div class="card">
-                        <div class="card-tag">AI GOVERNANCE &amp; SECOPS</div>
+                        <div class="card-tag">03 / AI INFRASTRUCTURE</div>
                         <h3>Enterprise LLM &amp; API Gateway</h3>
-                        <p>Zero-leakage PII masking, RBAC policy enforcement, and real-time token cost governance for production generative AI and RAG workloads.</p>
+                        <p>Unified routing, semantic caching, and real-time token governance for internal generative AI applications across self-hosted models and commercial foundation APIs.</p>
+                        <ul class="card-bullets">
+                            <li>Automated PII/PHI stream redaction</li>
+                            <li>Department-level token rate limiting</li>
+                            <li>Immutable audit logs for compliance</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Core Industries & Verticals -->
-        <section id="solutions" class="section-gray">
+        <!-- Ecosystem & Stack Integrations -->
+        <section id="integrations" class="section-gray">
             <div class="container">
                 <div class="section-header">
-                    <span class="sub-title">CORE VERTICALS</span>
-                    <h2>Industries &amp; Workloads We Power</h2>
-                    <p>Purpose-built compliance and low-latency data orchestration for regulated, data-intensive sectors.</p>
+                    <span class="sub-title">ECOSYSTEM COMPATIBILITY</span>
+                    <h2>Built for Modern Enterprise Infrastructure</h2>
+                    <p>Deploy via Helm, Terraform, or AWS CloudFormation in under 15 minutes alongside your existing cloud, data, and security stack.</p>
                 </div>
                 <div class="grid-4">
                     <div class="vertical-box">
-                        <h4>BFSI &amp; FinTech</h4>
-                        <p>Real-time fraud telemetry, PCI-DSS compliant data warehousing, and high-frequency ledger auditing.</p>
+                        <h4>Cloud &amp; Orchestration</h4>
+                        <p>Amazon Web Services (EKS, ECS, S3), Microsoft Azure (AKS), Google Cloud (GKE), Red Hat OpenShift, and Docker.</p>
                     </div>
                     <div class="vertical-box">
-                        <h4>Enterprise B2B SaaS</h4>
-                        <p>Multi-tenant Kubernetes observability, automated CI/CD telemetry, and customer-facing analytics pipelines.</p>
+                        <h4>Data &amp; Analytics</h4>
+                        <p>Snowflake, Databricks, Apache Kafka, Confluent, Amazon Redshift, Google BigQuery, PostgreSQL, and Apache Iceberg.</p>
                     </div>
                     <div class="vertical-box">
-                        <h4>Healthcare &amp; Life Sciences</h4>
-                        <p>HIPAA-aligned clinical data lakes, encrypted PHI data pipelines, and biomedical ML model orchestration.</p>
+                        <h4>Security &amp; Identity</h4>
+                        <p>Okta, Microsoft Entra ID, HashiCorp Vault, CrowdStrike Falcon, AWS IAM, SAML 2.0, and OpenID Connect (OIDC).</p>
                     </div>
                     <div class="vertical-box">
-                        <h4>E-Commerce &amp; Supply Chain</h4>
-                        <p>Predictive demand forecasting, real-time inventory event streaming, and global CDN edge analytics.</p>
+                        <h4>DevOps &amp; Observability</h4>
+                        <p>OpenTelemetry, Prometheus, Grafana, Datadog, Terraform, ArgoCD, GitHub Actions, and GitLab CI/CD.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- VIB Target Section: Technology Ecosystem, Partnerships & Vendor Briefings -->
-        <section id="partnerships" class="section-white">
+        <!-- Deployment & Licensing Tiers -->
+        <section id="deployments" class="section-white">
             <div class="container">
                 <div class="section-header">
-                    <span class="sub-title">ECOSYSTEM &amp; TECH PROCUREMENT</span>
-                    <h2>Technology Alliances &amp; Vendor Briefings</h2>
-                    <p>Klyra Lab actively collaborates with global ISVs, cloud providers, and enterprise software innovators to expand the KlyraCore ecosystem and evaluate next-generation infrastructure tools.</p>
+                    <span class="sub-title">DEPLOYMENT MODELS</span>
+                    <h2>Flexible Licensing for Regulated Workloads</h2>
+                    <p>Raw payload data never leaves your network perimeter. Choose the operational model that matches your security posture.</p>
                 </div>
-                <div class="partner-banner">
-                    <div class="partner-content">
-                        <h3>Open for Technical Webinars, Executive Roundtables &amp; Product Evaluations</h3>
-                        <p>Our Architecture &amp; Platform Engineering Committee continuously evaluates third-party solutions to integrate into our core stack and partner network. We actively participate in technical briefings, vendor proofs-of-concept (PoCs), and industry research across:</p>
-                        <ul class="partner-list">
-                            <li><strong>Cloud &amp; Kubernetes Infrastructure:</strong> Container orchestration, serverless compute, and hybrid-cloud networking.</li>
-                            <li><strong>Cybersecurity &amp; DevSecOps:</strong> Zero-Trust IAM, CNAPP, API security, automated vulnerability management, and SIEM/SOAR.</li>
-                            <li><strong>Data Management &amp; AI Infrastructure:</strong> Vector databases, streaming analytics, data governance, and AIOps observability.</li>
-                            <li><strong>Enterprise DevOps &amp; CI/CD:</strong> Automated testing, internal developer portals (IDPs), and infrastructure-as-code (IaC).</li>
+                <div class="grid-3">
+                    <div class="tier-card">
+                        <span class="tier-badge">HYBRID CLOUD</span>
+                        <h3>KlyraCore Managed SaaS</h3>
+                        <p class="tier-desc">Control plane hosted by Klyra Lab with lightweight, stateless eBPF agents running inside your cloud clusters.</p>
+                        <ul class="tier-list">
+                            <li>&check; Up to 50 Kubernetes nodes / 200 data tables</li>
+                            <li>&check; Metadata-only egress (Zero payload inspection)</li>
+                            <li>&check; Standard OpenTelemetry &amp; Snowflake connectors</li>
+                            <li>&check; 99.9% uptime SLA with 24/5 engineering support</li>
                         </ul>
-                        <p class="partner-note">To invite our engineering leadership or platform specialists to technical webinars, virtual intelligence briefings, or joint ISV partnership evaluations, contact our Ecosystem Desk below.</p>
+                        <a href="#contact" class="btn-outline">Request Pricing</a>
+                    </div>
+                    <div class="tier-card featured-tier">
+                        <span class="tier-badge-featured">MOST POPULAR &bull; BYOC</span>
+                        <h3>Virtual Private Cloud (VPC)</h3>
+                        <p class="tier-desc">Full control plane and data plane deployed directly inside your AWS, Azure, or GCP account via automated Terraform modules.</p>
+                        <ul class="tier-list">
+                            <li>&check; Unlimited nodes, clusters &amp; streaming pipelines</li>
+                            <li>&check; 100% in-VPC data residency &amp; AWS PrivateLink</li>
+                            <li>&check; Full Autonomous Compute Rightsizing &amp; LLM Gateway</li>
+                            <li>&check; 99.99% SLA with dedicated Solutions Architect</li>
+                        </ul>
+                        <a href="#contact" class="btn-primary-full">Schedule VPC Architecture Review</a>
+                    </div>
+                    <div class="tier-card">
+                        <span class="tier-badge">STRICT COMPLIANCE</span>
+                        <h3>Air-Gapped On-Premise</h3>
+                        <p class="tier-desc">Self-contained deployment for banking, defense, and healthcare environments with zero external internet connectivity.</p>
+                        <ul class="tier-list">
+                            <li>&check; Bare-metal, OpenShift &amp; VMware vSphere support</li>
+                            <li>&check; Customer-managed encryption keys (CMEK / HSM)</li>
+                            <li>&check; Custom RBAC, audit logging &amp; SIEM integration</li>
+                            <li>&check; 24/7/365 priority incident response team</li>
+                        </ul>
+                        <a href="#contact" class="btn-outline">Contact Enterprise Sales</a>
                     </div>
                 </div>
             </div>
@@ -149,59 +245,146 @@
         <section id="security" class="section-dark">
             <div class="container">
                 <div class="section-header-dark">
-                    <span class="sub-title-light">TRUST &amp; GOVERNANCE</span>
-                    <h2>Enterprise-Grade Security &amp; Compliance</h2>
-                    <p>Built from the ground up with zero-trust network architecture, end-to-end TLS 1.3 / AES-256 encryption, and continuous compliance monitoring.</p>
+                    <span class="sub-title-light">SECURITY &amp; GOVERNANCE</span>
+                    <h2>Zero-Trust Data Protection by Default</h2>
+                    <p>Engineered to meet the strictest enterprise procurement and regulatory requirements across global jurisdictions.</p>
                 </div>
                 <div class="badges">
                     <div class="badge-item">SOC 2 Type II Audited</div>
                     <div class="badge-item">ISO/IEC 27001:2022</div>
-                    <div class="badge-item">GDPR &amp; DPDP Act Ready</div>
-                    <div class="badge-item">HIPAA Compliant Architecture</div>
-                    <div class="badge-item"> SAML 2.0 / OIDC SSO</div>
+                    <div class="badge-item">GDPR &amp; DPDP Act Compliant</div>
+                    <div class="badge-item">HIPAA Ready Architecture</div>
+                    <div class="badge-item">TLS 1.3 &amp; AES-256 Encryption</div>
                 </div>
             </div>
         </section>
 
-        <!-- Corporate Contact & Verification Section -->
+        <!-- Interactive Enterprise Demo Form & Bengaluru Office -->
         <section id="contact" class="section-gray">
             <div class="container">
-                <div class="section-header">
-                    <span class="sub-title">CORPORATE DIRECTORY</span>
-                    <h2>Headquarters &amp; Vendor Verification Desk</h2>
-                    <p>Reach out to our Bengaluru engineering hub for enterprise demos, ISV partnership inquiries, and corporate verification.</p>
-                </div>
-                <div class="contact-grid">
-                    <div class="contact-card">
-                        <h4>Corporate Identity &amp; Registered Office</h4>
-                        <p><strong>Legal Entity:</strong> Klyra Data Systems Pvt. Ltd.</p>
-                        <p><strong>Brand Identity:</strong> Klyra Lab</p>
-                        <p><strong>Flagship Platform:</strong> KlyraCore v2.4 (Enterprise Edition)</p>
-                        <p><strong>Headquarters:</strong> 3rd Floor, 27th Main Rd, Sector 1, HSR Layout, Bengaluru, Karnataka 560102, India</p>
+                <div class="contact-split">
+                    <!-- Left: Office & Direct Contact Info -->
+                    <div class="contact-info">
+                        <span class="sub-title">BOOK A WALKTHROUGH</span>
+                        <h2>Evaluate KlyraCore With Our Engineering Team</h2>
+                        <p>Schedule a 30-minute technical session with a Principal Solutions Architect to review your pipeline topology, Kubernetes footprint, and projected cloud savings.</p>
+
+                        <div class="office-block">
+                            <h4>Bengaluru R&amp;D &amp; Corporate Headquarters</h4>
+                            <p><strong>Klyra Lab (Klyra Data Systems Pvt. Ltd.)</strong></p>
+                            <p>3rd Floor, 27th Main Rd, Sector 1, HSR Layout<br>Bengaluru, Karnataka 560102, India</p>
+                        </div>
+
+                        <div class="office-block">
+                            <h4>Direct Channels</h4>
+                            <p><strong>Enterprise Sales &amp; Support:</strong> <a href="mailto:support@klyralab.in">support@klyralab.in</a></p>
+                            <p><strong>Technology Alliances:</strong> <a href="mailto:support@klyralab.in">support@klyralab.in</a></p>
+                            <p><strong>Control Plane Status:</strong> <span class="status-online">&#9679; All Cloud Regions Operational (99.99%)</span></p>
+                        </div>
                     </div>
-                    <div class="contact-card">
-                        <h4>Direct Department Contacts</h4>
-                        <p><strong>General &amp; Verification Desk:</strong> <a href="mailto:support@klyralab.in">support@klyralab.in</a></p>
-                        <p><strong>ISV Partnerships &amp; Webinars:</strong> <a href="mailto:support@klyralab.in">support@klyralab.in</a></p>
-                        <p><strong>Operating Hours:</strong> Monday – Friday, 9:00 AM – 7:00 PM IST (Global Support 24/5)</p>
-                        <p><strong>Status:</strong> <span class="status-online">&#9679; All KlyraCore Cloud Regions Operational</span></p>
+
+                    <!-- Right: Interactive Request Demo Form -->
+                    <div class="contact-form-card">
+                        <h3>Request Custom Architecture Demo</h3>
+                        <form id="demoForm" onsubmit="handleDemoSubmit(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fname">Full Name *</label>
+                                    <input type="text" id="fname" required placeholder="Arjun Mehta">
+                                </div>
+                                <div class="form-group">
+                                    <label for="wemail">Work Email *</label>
+                                    <input type="email" id="wemail" required placeholder="arjun@company.com">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="company">Company Name *</label>
+                                    <input type="text" id="company" required placeholder="Acme Enterprise Ltd.">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cloud">Primary Cloud Environment</label>
+                                    <select id="cloud">
+                                        <option value="aws">Amazon Web Services (AWS)</option>
+                                        <option value="azure">Microsoft Azure</option>
+                                        <option value="gcp">Google Cloud Platform (GCP)</option>
+                                        <option value="multicloud">Multi-Cloud / Hybrid On-Prem</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="workload">Primary Evaluation Focus</label>
+                                <select id="workload">
+                                    <option value="observability">Data Pipeline Observability (Snowflake / Kafka / Spark)</option>
+                                    <option value="finops">Kubernetes Compute Rightsizing &amp; Cloud FinOps</option>
+                                    <option value="llmgateway">Enterprise LLM Gateway &amp; AI Governance</option>
+                                    <option value="partner">ISV Ecosystem &amp; Technology Partnership</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="notes">Architecture Notes (Optional)</label>
+                                <textarea id="notes" rows="3" placeholder="Briefly describe your cluster size, data stack, or compliance requirements..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit">Request Technical Walkthrough</button>
+                            <p id="formFeedback" class="form-feedback">Thank you. Your request has been routed to our Bengaluru Solutions Architecture desk. A confirmation will be sent from support@klyralab.in.</p>
+                        </form>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Multi-Column Enterprise Footer -->
     <footer>
-        <div class="container footer-flex">
-            <div>
-                <strong>Klyra Lab</strong> &mdash; A division of Klyra Data Systems Pvt. Ltd.
-                <p class="footer-sub">3rd Floor, 27th Main Rd, Sector 1, HSR Layout, Bengaluru, KA 560102</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col-brand">
+                    <div class="brand-footer">
+                        <span class="logo-mark">KL</span>
+                        <span class="logo-text-white">Klyra Lab</span>
+                    </div>
+                    <p class="footer-desc">Enterprise data observability, autonomous Kubernetes FinOps, and secure AI gateway infrastructure.</p>
+                    <p class="footer-addr">3rd Floor, 27th Main Rd, Sector 1, HSR Layout<br>Bengaluru, Karnataka 560102, India</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Platform</h5>
+                    <a href="#platform">KlyraCore v2.4</a>
+                    <a href="#platform">eBPF Collectors</a>
+                    <a href="#platform">Data Lineage Engine</a>
+                    <a href="#platform">Kubernetes FinOps</a>
+                    <a href="#platform">LLM Security Gateway</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Resources</h5>
+                    <a href="#deployments">VPC Deployment Guide</a>
+                    <a href="#integrations">Supported Connectors</a>
+                    <a href="#security">Security &amp; Trust Center</a>
+                    <a href="#contact">Release Notes (v2.4)</a>
+                    <a href="#contact">API Reference</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Company</h5>
+                    <a href="#contact">About Bengaluru Hub</a>
+                    <a href="#integrations">Technology Partners</a>
+                    <a href="mailto:support@klyralab.in">Contact Support</a>
+                    <a href="#security">Privacy &amp; DPDP Policy</a>
+                    <a href="#security">Terms of Service</a>
+                </div>
             </div>
-            <div class="footer-right">
+            <div class="footer-bottom">
                 <p>&copy; 2026 Klyra Data Systems Pvt. Ltd. All rights reserved.</p>
+                <p>System Status: <span class="status-online">&#9679; All Systems Operational</span></p>
             </div>
         </div>
     </footer>
+
+    <script>
+        function handleDemoSubmit(e) {
+            e.preventDefault();
+            var feedback = document.getElementById('formFeedback');
+            feedback.style.display = 'block';
+            document.getElementById('demoForm').reset();
+        }
+    </script>
 </body>
 </html>
