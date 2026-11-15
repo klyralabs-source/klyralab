@@ -227,15 +227,24 @@ nav a:hover {
     flex-wrap: wrap;
 }
 
-.cloud-pills span {
+.cloud-pills span,
+.cloud-pills a {
     background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.14);
     color: #e2e8f0;
     font-size: 0.78rem;
     font-weight: 600;
-    padding: 0.3rem 0.7rem;
+    padding: 0.35rem 0.75rem;
     border-radius: 4px;
     text-transform: none;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.cloud-pills a:hover {
+    background: rgba(37, 99, 235, 0.35);
+    border-color: #60a5fa;
+    color: #ffffff;
 }
 
 /* Terminal Visual */
@@ -763,43 +772,6 @@ footer {
     gap: 1rem;
 }
 
-@media (max-width: 900px) {
-    .hero-grid, .contact-split {
-        grid-template-columns: 1fr;
-    }
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 600px) {
-    .form-row, .footer-grid {
-        grid-template-columns: 1fr;
-    }
-    .nav-container {
-        flex-direction: column;
-        gap: 1rem;
-    }
-}
-/* Clickable Cloud Pills in Hero */
-.cloud-pills a {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    color: #e2e8f0;
-    font-size: 0.78rem;
-    font-weight: 600;
-    padding: 0.35rem 0.75rem;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: all 0.2s;
-}
-
-.cloud-pills a:hover {
-    background: rgba(37, 99, 235, 0.35);
-    border-color: #60a5fa;
-    color: #ffffff;
-}
-
 /* Interactive Document Modal */
 .modal-overlay {
     display: none;
@@ -870,4 +842,29 @@ footer {
 
 .modal-body li {
     margin-bottom: 0.5rem;
+}
+
+.modal-body a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .hero-grid, .contact-split {
+        grid-template-columns: 1fr;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-row, .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
 }
