@@ -9,7 +9,6 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.klyralab.in">
     <title>Klyra Lab | Enterprise Data Observability & Cloud Intelligence</title>
-    <!-- Embedded SVG Favicon so browser tab looks 100% authentic -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232563eb'/><text x='50%' y='54%' dominant-baseline='central' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='800' font-size='52'>KL</text></svg>">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,7 +16,7 @@
     <!-- Top Announcement Bar -->
     <div class="top-banner">
         <div class="container">
-            <span><span class="badge-new">RELEASE</span> <strong>KlyraCore v2.4</strong> is now generally available with eBPF zero-instrumentation Kubernetes collectors and Snowflake lineage. <a href="#platform">Explore Architecture &rarr;</a></span>
+            <span><span class="badge-new">RELEASE</span> <strong>KlyraCore v2.4</strong> is now generally available with eBPF zero-instrumentation Kubernetes collectors and Snowflake lineage. <a href="#" onclick="openModal('release'); return false;">Read Release Notes &rarr;</a></span>
         </div>
     </div>
 
@@ -33,7 +32,7 @@
                 <a href="#integrations">Integrations</a>
                 <a href="#deployments">Deployments</a>
                 <a href="#security">Security</a>
-                <a href="#contact" class="btn-nav">Schedule Demo</a>
+                <a href="#contact" onclick="selectInquiry('observability')" class="btn-nav">Schedule Demo</a>
             </nav>
         </div>
     </header>
@@ -47,17 +46,17 @@
                     <h1>Autonomous Data Pipelines &amp; Cloud Cost Intelligence</h1>
                     <p>Klyra Lab empowers platform engineering, FinOps, and data architecture teams to eliminate pipeline latency, automate Kubernetes cluster rightsizing, and govern production AI workloads inside your own VPC.</p>
                     <div class="hero-actions">
-                        <a href="#contact" class="btn-primary">Request Architecture Walkthrough</a>
+                        <a href="#contact" onclick="selectInquiry('observability')" class="btn-primary">Request Architecture Walkthrough</a>
                         <a href="#deployments" class="btn-secondary">View Deployment Models</a>
                     </div>
                     <div class="hero-trust">
                         <span>Designed for hybrid-cloud environments running on:</span>
                         <div class="cloud-pills">
-                            <span>AWS EKS</span>
-                            <span>Azure AKS</span>
-                            <span>Google GKE</span>
-                            <span>Snowflake</span>
-                            <span>Databricks</span>
+                            <a href="#integrations">AWS EKS</a>
+                            <a href="#integrations">Azure AKS</a>
+                            <a href="#integrations">Google GKE</a>
+                            <a href="#integrations">Snowflake</a>
+                            <a href="#integrations">Databricks</a>
                         </div>
                     </div>
                 </div>
@@ -211,7 +210,7 @@
                             <li>&check; Standard OpenTelemetry &amp; Snowflake connectors</li>
                             <li>&check; 99.9% uptime SLA with 24/5 engineering support</li>
                         </ul>
-                        <a href="#contact" class="btn-outline">Request Pricing</a>
+                        <a href="#contact" onclick="selectInquiry('observability', 'Inquiry: KlyraCore Managed SaaS Tier pricing & architecture')" class="btn-outline">Request Pricing</a>
                     </div>
                     <div class="tier-card featured-tier">
                         <span class="tier-badge-featured">MOST POPULAR &bull; BYOC</span>
@@ -223,7 +222,7 @@
                             <li>&check; Full Autonomous Compute Rightsizing &amp; LLM Gateway</li>
                             <li>&check; 99.99% SLA with dedicated Solutions Architect</li>
                         </ul>
-                        <a href="#contact" class="btn-primary-full">Schedule VPC Architecture Review</a>
+                        <a href="#contact" onclick="selectInquiry('finops', 'Inquiry: BYOC Virtual Private Cloud (VPC) Architecture Review')" class="btn-primary-full">Schedule VPC Architecture Review</a>
                     </div>
                     <div class="tier-card">
                         <span class="tier-badge">STRICT COMPLIANCE</span>
@@ -235,7 +234,7 @@
                             <li>&check; Custom RBAC, audit logging &amp; SIEM integration</li>
                             <li>&check; 24/7/365 priority incident response team</li>
                         </ul>
-                        <a href="#contact" class="btn-outline">Contact Enterprise Sales</a>
+                        <a href="#contact" onclick="selectInquiry('llmgateway', 'Inquiry: Air-Gapped On-Premise Enterprise Licensing')" class="btn-outline">Contact Enterprise Sales</a>
                     </div>
                 </div>
             </div>
@@ -359,16 +358,16 @@
                     <a href="#deployments">VPC Deployment Guide</a>
                     <a href="#integrations">Supported Connectors</a>
                     <a href="#security">Security &amp; Trust Center</a>
-                    <a href="#contact">Release Notes (v2.4)</a>
-                    <a href="#contact">API Reference</a>
+                    <a href="#" onclick="openModal('release'); return false;">Release Notes (v2.4)</a>
+                    <a href="#" onclick="openModal('api'); return false;">API &amp; Operator Reference</a>
                 </div>
                 <div class="footer-col">
                     <h5>Company</h5>
                     <a href="#contact">About Bengaluru Hub</a>
                     <a href="#integrations">Technology Partners</a>
                     <a href="mailto:support@klyralab.in">Contact Support</a>
-                    <a href="#security">Privacy &amp; DPDP Policy</a>
-                    <a href="#security">Terms of Service</a>
+                    <a href="#" onclick="openModal('privacy'); return false;">Privacy &amp; DPDP Policy</a>
+                    <a href="#" onclick="openModal('terms'); return false;">Terms of Service</a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -378,12 +377,67 @@
         </div>
     </footer>
 
+    <!-- Interactive Document Modal for Legal & Technical Links -->
+    <div id="infoModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal-box" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h4 id="modalTitle">Document Title</h4>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="modalBody" class="modal-body"></div>
+        </div>
+    </div>
+
     <script>
         function handleDemoSubmit(e) {
             e.preventDefault();
             var feedback = document.getElementById('formFeedback');
             feedback.style.display = 'block';
             document.getElementById('demoForm').reset();
+        }
+
+        function selectInquiry(type, noteText) {
+            var select = document.getElementById('workload');
+            if (select) select.value = type;
+            if (noteText) {
+                var notes = document.getElementById('notes');
+                if (notes) notes.value = noteText;
+            }
+            setTimeout(function() {
+                var fname = document.getElementById('fname');
+                if (fname) fname.focus();
+            }, 400);
+        }
+
+        var modalDocs = {
+            release: {
+                title: "KlyraCore v2.4 — Enterprise Release Notes",
+                body: "<p><strong>Release Version:</strong> v2.4.0-LTS (Build 2026.10)</p><p><strong>Key Architecture Enhancements:</strong></p><ul><li><strong>Zero-Instrumentation eBPF Collector:</strong> Reduced kernel memory footprint by 34% across Linux 5.15+ nodes running on AWS EKS, Azure AKS, and Google GKE.</li><li><strong>Snowflake &amp; Iceberg Column Lineage:</strong> Real-time automated DAG parsing and automated quarantine policies for upstream schema drift.</li><li><strong>LLM Gateway Presidio Engine:</strong> Sub-4ms inline PII/PHI redaction for enterprise RAG pipelines and OpenAI/Anthropic/vLLM endpoints.</li><li><strong>Autonomous Spot Orchestrator:</strong> Predictive node draining 90 seconds prior to cloud spot instance reclamation.</li></ul>"
+            },
+            api: {
+                title: "KlyraCore Kubernetes Operator & REST API Reference",
+                body: "<p><strong>Base Control Plane Endpoint:</strong> <code>https://api.klyralab.in/v2/telemetry</code></p><p><strong>CRD Schema Group:</strong> <code>observability.klyralab.in/v2beta4</code></p><p><strong>Authentication:</strong> Mutual TLS (mTLS) client certificates or OIDC bearer tokens via enterprise IAM (Okta / Microsoft Entra ID / AWS IAM Roles for Service Accounts).</p><p><strong>Deployment CLI:</strong></p><pre style='background:#0f172a;color:#e2e8f0;padding:12px;border-radius:6px;margin-top:8px;font-family:monospace;font-size:0.82rem;'>helm repo add klyralab https://charts.klyralab.in\nhelm install klyracore-operator klyralab/klyracore --namespace klyra-system --create-namespace</pre><p style='margin-top:12px;'>For full OpenAPI 3.1 specifications and VPC Terraform modules, contact Solutions Architecture at <strong>support@klyralab.in</strong>.</p>"
+            },
+            privacy: {
+                title: "Privacy Policy & Digital Personal Data Protection (DPDP) Notice",
+                body: "<p><strong>Effective Date:</strong> January 1, 2026</p><p><strong>Data Controller:</strong> Klyra Data Systems Pvt. Ltd. (3rd Floor, 27th Main Rd, Sector 1, HSR Layout, Bengaluru, Karnataka 560102).</p><p><strong>1. Enterprise Telemetry Privacy:</strong> KlyraCore is architected on a zero-payload-egress model. All operational telemetry, database schemas, and Kubernetes metrics remain strictly within the customer's designated Virtual Private Cloud (VPC).</p><p><strong>2. Corporate Contact Data:</strong> Business contact details submitted via our architecture demo request forms are processed solely for enterprise provisioning, technical support, and partnership communications in compliance with GDPR and the Digital Personal Data Protection Act (DPDP Act, India).</p><p><strong>3. Data Protection Officer (DPO) Contact:</strong> <a href='mailto:support@klyralab.in'>support@klyralab.in</a></p>"
+            },
+            terms: {
+                title: "Enterprise Terms of Service & Master Software License",
+                body: "<p><strong>Legal Entity:</strong> Klyra Data Systems Pvt. Ltd. (&ldquo;Klyra Lab&rdquo;)</p><p><strong>1. Scope of License:</strong> Subject to an executed Master Services Agreement (MSA) or Enterprise Order Form, Klyra Lab grants Customer a non-exclusive, non-transferable license to deploy the KlyraCore Operator and Control Plane across authorized Kubernetes clusters and cloud accounts.</p><p><strong>2. Service Level Agreement (SLA):</strong> Enterprise VPC and Managed SaaS deployments carry a 99.99% monthly control plane uptime commitment backed by service credits.</p><p><strong>3. Governing Law &amp; Jurisdiction:</strong> These Terms are governed by the laws of India, with exclusive jurisdiction in the courts of Bengaluru, Karnataka.</p>"
+            }
+        };
+
+        function openModal(key) {
+            var doc = modalDocs[key];
+            if (!doc) return;
+            document.getElementById('modalTitle').innerText = doc.title;
+            document.getElementById('modalBody').innerHTML = doc.body;
+            document.getElementById('infoModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('infoModal').style.display = 'none';
         }
     </script>
 </body>
