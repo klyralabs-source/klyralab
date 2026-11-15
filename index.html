@@ -63,13 +63,13 @@
 
                 <!-- Visual SaaS Dashboard UI -->
                 <div class="hero-right">
-                    <div class="dashboard-preview">
+                   <div class="dashboard-preview">
                         <div class="dash-header">
                             <div class="dash-title">
                                 <span class="dash-dot"></span>
                                 <strong>KlyraCore Control Plane</strong>
                             </div>
-                            <span class="dash-region">AWS ap-south-1 &bull; Live</span>
+                            <span class="dash-region">AWS ap-south-1 &bull; VPC Cluster</span>
                         </div>
                         <div class="dash-body">
                             <div class="dash-kpi-row">
@@ -86,9 +86,9 @@
                                 <div class="bar-item">
                                     <div class="bar-label">
                                         <span>Kubernetes Cluster Efficiency (EKS / AKS)</span>
-                                        <strong>94% Optimal</strong>
+                                        <strong id="liveEffText">94% Optimal</strong>
                                     </div>
-                                    <div class="bar-track"><div class="bar-fill blue" style="width: 94%;"></div></div>
+                                    <div class="bar-track"><div id="liveEffBar" class="bar-fill blue" style="width: 94%; transition: width 0.8s ease;"></div></div>
                                 </div>
                                 <div class="bar-item">
                                     <div class="bar-label">
@@ -107,7 +107,7 @@
                             </div>
                             <div class="dash-footer">
                                 <span>&#10003; Zero-Trust VPC Mode Active</span>
-                                <span>Telemetry Latency: 8.4ms</span>
+                                <span>Telemetry Latency: <span id="liveLatency">8.4</span>ms</span>
                             </div>
                         </div>
                     </div>
