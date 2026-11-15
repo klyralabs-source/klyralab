@@ -76,7 +76,7 @@
 <span class="c-key">kind:</span> <span class="c-str">ClusterOptimizationPolicy</span>
 <span class="c-key">metadata:</span>
   <span class="c-key">name:</span> <span class="c-str">prod-data-mesh-finops</span>
-  <span class="c-key">region:</span> <span class="c-str">ap-south-1</span>
+  <span class="c-key">namespace:</span> <span class="c-str">prod-ap-south-1</span>
 <span class="c-key">spec:</span>
   <span class="c-key">telemetryCollector:</span> <span class="c-str">ebpf-zero-overhead</span>
   <span class="c-key">dataLineage:</span>
@@ -276,11 +276,9 @@
 
                         <div class="office-block">
                             <h4>Direct Channels</h4>
-                            <p><strong>Enterprise Sales &amp; Licensing:</strong> <a href="mailto:sales@klyralab.in">sales@klyralab.in</a></p>
-                            <p><strong>Technical Support &amp; Operations:</strong> <a href="mailto:support@klyralab.in">support@klyralab.in</a></p>
-                            <p><strong>Technology Alliances &amp; ISVs:</strong> <a href="mailto:partners@klyralab.in">partners@klyralab.in</a></p>
-                            <p><strong>Leadership &amp; Operations Desk:</strong> <a href="mailto:sreeja@klyralab.in">sreeja@klyralab.in</a></p>
-                            <p><strong>Engineering Careers:</strong> <a href="mailto:careers@klyralab.in">careers@klyralab.in</a></p>
+                            <p><strong>Sales:</strong> <a href="mailto:sales@klyralab.in">sales@klyralab.in</a></p>
+                            <p><strong>Support:</strong> <a href="mailto:support@klyralab.in">support@klyralab.in</a></p>
+                            <p><strong>Partnerships:</strong> <a href="mailto:partners@klyralab.in">partners@klyralab.in</a></p>
                         </div>
                     </div>
 
@@ -291,17 +289,17 @@
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="fname">Full Name *</label>
-                                    <input type="text" id="fname" required placeholder="Arjun Mehta">
+                                    <input type="text" id="fname" required placeholder="First and last name">
                                 </div>
                                 <div class="form-group">
                                     <label for="wemail">Work Email *</label>
-                                    <input type="email" id="wemail" required placeholder="arjun@company.com">
+                                    <input type="email" id="wemail" required placeholder="name@company.com">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="company">Company Name *</label>
-                                    <input type="text" id="company" required placeholder="Acme Enterprise Ltd.">
+                                    <input type="text" id="company" required placeholder="Company or organization">
                                 </div>
                                 <div class="form-group">
                                     <label for="cloud">Primary Cloud Environment</label>
@@ -327,7 +325,7 @@
                                 <textarea id="notes" rows="3" placeholder="Briefly describe your cluster size, data stack, or compliance requirements..."></textarea>
                             </div>
                             <button type="submit" class="btn-submit">Request Technical Walkthrough</button>
-                            <p id="formFeedback" class="form-feedback">Thank you. Your request has been routed to our Bengaluru Solutions Architecture desk. A confirmation will be sent from sales@klyralab.in.</p>
+                            <p id="formFeedback" class="form-feedback">Thank you. Your request has been routed to our Solutions Architecture desk. A confirmation will be sent from sales@klyralab.in.</p>
                         </form>
                     </div>
                 </div>
@@ -365,9 +363,9 @@
                 </div>
                 <div class="footer-col">
                     <h5>Company</h5>
-                    <a href="#contact">About Bengaluru Hub</a>
-                    <a href="mailto:partners@klyralab.in">Technology Partners</a>
-                    <a href="mailto:careers@klyralab.in">Engineering Careers</a>
+                    <a href="#contact">About Us</a>
+                    <a href="#" onclick="openModal('careers'); return false;">Careers</a>
+                    <a href="mailto:partners@klyralab.in">Partners</a>
                     <a href="mailto:support@klyralab.in">Contact Support</a>
                     <a href="#" onclick="openModal('privacy'); return false;">Privacy &amp; DPDP Policy</a>
                     <a href="#" onclick="openModal('terms'); return false;">Terms of Service</a>
@@ -380,7 +378,7 @@
         </div>
     </footer>
 
-    <!-- Interactive Document Modal for Legal & Technical Links -->
+    <!-- Interactive Document Modal for Legal, Technical & Careers Links -->
     <div id="infoModal" class="modal-overlay" onclick="closeModal(event)">
         <div class="modal-box" onclick="event.stopPropagation()">
             <div class="modal-header">
@@ -420,6 +418,10 @@
             api: {
                 title: "KlyraCore Kubernetes Operator & REST API Reference",
                 body: "<p><strong>Base Control Plane Endpoint:</strong> <code>https://api.klyralab.in/v2/telemetry</code></p><p><strong>CRD Schema Group:</strong> <code>observability.klyralab.in/v2beta4</code></p><p><strong>Authentication:</strong> Mutual TLS (mTLS) client certificates or OIDC bearer tokens via enterprise IAM (Okta / Microsoft Entra ID / AWS IAM Roles for Service Accounts).</p><p><strong>Deployment CLI:</strong></p><pre style='background:#0f172a;color:#e2e8f0;padding:12px;border-radius:6px;margin-top:8px;font-family:monospace;font-size:0.82rem;'>helm repo add klyralab https://charts.klyralab.in\nhelm install klyracore-operator klyralab/klyracore --namespace klyra-system --create-namespace</pre><p style='margin-top:12px;'>For full OpenAPI 3.1 specifications and VPC Terraform modules, contact Solutions Architecture at <strong><a href='mailto:support@klyralab.in'>support@klyralab.in</a></strong> or <strong><a href='mailto:sales@klyralab.in'>sales@klyralab.in</a></strong>.</p>"
+            },
+            careers: {
+                title: "Engineering & R&D Careers at Klyra Lab",
+                body: "<p>We are expanding our core platform and systems engineering teams at our HSR Layout, Bengaluru headquarters.</p><p><strong>Open Positions (Hybrid / Bengaluru):</strong></p><ul><li><strong>Senior Systems Engineer — eBPF &amp; Linux Kernel</strong> (Go, C, Kubernetes CNI)</li><li><strong>Staff Data Platform Engineer</strong> (Apache Kafka, Snowflake, Rust/Scala)</li><li><strong>Cloud Solutions Architect — Enterprise FinOps</strong> (AWS/Azure, Terraform, Kubernetes)</li></ul><p>To apply, send your resume and GitHub/portfolio link to our talent team at <strong><a href='mailto:careers@klyralab.in'>careers@klyralab.in</a></strong>.</p>"
             },
             privacy: {
                 title: "Privacy Policy & Digital Personal Data Protection (DPDP) Notice",
