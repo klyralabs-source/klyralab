@@ -462,23 +462,6 @@
         function closeModal() {
             document.getElementById('infoModal').style.display = 'none';
         }
-
-        // Continuous real-time telemetry simulation (updates every 3.2 seconds)
-        setInterval(function() {
-            var latEl = document.getElementById('liveLatency');
-            var effText = document.getElementById('liveEffText');
-            var effBar = document.getElementById('liveEffBar');
-            if (latEl) {
-                var newLat = (8.1 + Math.random() * 0.7).toFixed(1);
-                latEl.innerText = newLat;
-            }
-            if (effText && effBar) {
-                var effVals = [93, 94, 94, 95];
-                var pick = effVals[Math.floor(Math.random() * effVals.length)];
-                effText.innerText = pick + '% Optimal';
-                effBar.style.width = pick + '%';
-            }
-        }, 3200);
     </script>
 </body>
 </html>
